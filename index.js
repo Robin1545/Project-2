@@ -36,13 +36,15 @@ function checkResult (value) {
     if(value == random){
         p1.innerHTML = 'You Have Won!';
         wons ++;
+        p1.classList.remove('wrong');
         p1.classList.add('right');
     }else{
         p1.innerHTML = 'You Have Lost. The Random Number was : ' + random;
         losts ++;
+        p1.classList.remove('right');
         p1.classList.add('wrong');
     };
-    message.innerHTML = `Wons : ${wons},    Losts : ${losts}`;
+    message.innerHTML = `Wons : ${wons}, Losts : ${losts}`;
     message.classList.add('largeText');
     cardBody.appendChild(message);
 };
